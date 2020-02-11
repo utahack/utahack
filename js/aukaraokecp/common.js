@@ -49,7 +49,7 @@
 	
 	$win.on('load',function(){
 		if(!isOLD){
-			var i=0;cl = $cont.size();
+			var i=0;cl = $cont.length;
 			for(i;i<cl;i++){
 				var $contunit = $cont.eq(i);
 				contlist.push($contunit);

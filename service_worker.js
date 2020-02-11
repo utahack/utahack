@@ -1,11 +1,13 @@
 // ServiceWorker処理：https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja
 
 // キャッシュ名とキャッシュファイルの指定
-var CACHE_NAME = 'aukara-cache-v1';
-var urlsToCache = [
+const CACHE_NAME = 'aukara-cache-v1';
+const urlsToCache = ['https://utahack.github.io/index.html',
+    'https://utahack.github.io/manifest.json',
     'https://utahack.github.io/service_worker.js',
     'https://utahack.github.io/aukaraokecp/index.html',
     'https://utahack.github.io/aukaraokecp/coupon/utahiro/index.html',
+    'https://utahack.github.io/css/wrapper.css',
     'https://utahack.github.io/css/aukaraokecp/colorbox.css',
     'https://utahack.github.io/css/aukaraokecp/default.css',
     'https://utahack.github.io/css/aukaraokecp/mogimae.css',
@@ -17,38 +19,63 @@ var urlsToCache = [
     'https://utahack.github.io/images/aukaraokecp/apple-touch-icon-76x76.png',
     'https://utahack.github.io/images/aukaraokecp/apple-touch-icon.png',
     'https://utahack.github.io/images/aukaraokecp/au_icon.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_01.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_02.png',
     'https://utahack.github.io/images/aukaraokecp/btn_03a.png',
     'https://utahack.github.io/images/aukaraokecp/btn_03b.png',
     'https://utahack.github.io/images/aukaraokecp/btn_03c.png',
     'https://utahack.github.io/images/aukaraokecp/btn_04.png',
     'https://utahack.github.io/images/aukaraokecp/btn_05.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_06.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_07.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_08.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_09.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_10.png',
     'https://utahack.github.io/images/aukaraokecp/btn_11.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_12.png',
     'https://utahack.github.io/images/aukaraokecp/btn_13.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_14.png',
     'https://utahack.github.io/images/aukaraokecp/btn_15.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_16.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_17.png',
     'https://utahack.github.io/images/aukaraokecp/btn_18.png',
     'https://utahack.github.io/images/aukaraokecp/btn_19.png',
     'https://utahack.github.io/images/aukaraokecp/btn_20.png',
     'https://utahack.github.io/images/aukaraokecp/btn_21.png',
     'https://utahack.github.io/images/aukaraokecp/btn_22.png',
     'https://utahack.github.io/images/aukaraokecp/btn_23.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_24.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_coupon_open.png',
+    'https://utahack.github.io/images/aukaraokecp/btn_coupon_space.png',
     'https://utahack.github.io/images/aukaraokecp/btn_drink.png',
     'https://utahack.github.io/images/aukaraokecp/coupon-bottom.png',
     'https://utahack.github.io/images/aukaraokecp/coupon-title.png',
     'https://utahack.github.io/images/aukaraokecp/coupon-top.png',
     'https://utahack.github.io/images/aukaraokecp/coupon_sumi.png',
     'https://utahack.github.io/images/aukaraokecp/coupon_title.png',
+    'https://utahack.github.io/images/aukaraokecp/favicon.ico',
     'https://utahack.github.io/images/aukaraokecp/fig_howto_01.png',
     'https://utahack.github.io/images/aukaraokecp/fig_howto_02.png',
     'https://utahack.github.io/images/aukaraokecp/fig_howto_03.png',
     'https://utahack.github.io/images/aukaraokecp/fig_howto_04.png',
+    'https://utahack.github.io/images/aukaraokecp/fig_howto_04_600.png',
+    'https://utahack.github.io/images/aukaraokecp/ico_close.gif',
+    'https://utahack.github.io/images/aukaraokecp/ico_open.gif',
+    'https://utahack.github.io/images/aukaraokecp/img_auPAY_0210_01.gif',
+    'https://utahack.github.io/images/aukaraokecp/img_auPAY_0210_02.png',
+    'https://utahack.github.io/images/aukaraokecp/img_auPAY_2001_560x220.jpg',
+    'https://utahack.github.io/images/aukaraokecp/img_auPAY_2010_btn.png',
     'https://utahack.github.io/images/aukaraokecp/img_header01_mog.png',
     'https://utahack.github.io/images/aukaraokecp/img_main02.png',
+    'https://utahack.github.io/images/aukaraokecp/img_main02_600.png',
     'https://utahack.github.io/images/aukaraokecp/img_main03_mog.png',
     'https://utahack.github.io/images/aukaraokecp/img_main_mog02.jpg',
+    'https://utahack.github.io/images/aukaraokecp/img_main_mog02_600.png',
     'https://utahack.github.io/images/aukaraokecp/shop_btn.png',
     'https://utahack.github.io/images/aukaraokecp/shop_title.png',
     'https://utahack.github.io/images/aukaraokecp/top_cou_evtue_01.png',
     'https://utahack.github.io/images/aukaraokecp/top_cou_info_01.png',
+    'https://utahack.github.io/images/aukaraokecp/top_cou_info_01_600.png',
     'https://utahack.github.io/images/aukaraokecp/top_cou_info_02.png',
     'https://utahack.github.io/images/aukaraokecp/shop/borabora/logo_01.png',
     'https://utahack.github.io/images/aukaraokecp/shop/joysound/logo_01.png',
@@ -69,45 +96,55 @@ var urlsToCache = [
     'https://utahack.github.io/images/autuesday/shop/utahiro/btn_01.png',
     'https://utahack.github.io/images/autuesday/shop/utahiro/logo_01.png',
     'https://utahack.github.io/images/autuesday/shop/utahiro/coupon/a_utahiro_20190430_detail.png',
+    'https://utahack.github.io/images/autuesday/shop/utahiro/coupon/a_utahiro_20200211_detail.png',
     'https://utahack.github.io/images/autuesday/shop/utahiro/coupon/b_utahiro_20190430_detail.png',
+    'https://utahack.github.io/images/autuesday/shop/utahiro/coupon/b_utahiro_20200211_detail.png',
+    'https://utahack.github.io/images/icon/back_bar_button.png',
+    'https://utahack.github.io/images/icon/button_sidemenu.png',
+    'https://utahack.github.io/images/icon/button_sidemenu_close.png',
+    'https://utahack.github.io/images/icon/icon_menu_anshin.png',
+    'https://utahack.github.io/images/icon/icon_menu_anshin_on.png',
+    'https://utahack.github.io/images/icon/icon_menu_app.png',
+    'https://utahack.github.io/images/icon/icon_menu_app_on.png',
+    'https://utahack.github.io/images/icon/icon_menu_home.png',
+    'https://utahack.github.io/images/icon/icon_menu_home_on.png',
+    'https://utahack.github.io/images/icon/icon_menu_point.png',
+    'https://utahack.github.io/images/icon/icon_menu_point_on.png',
+    'https://utahack.github.io/images/icon/icon_menu_tokuten.png',
+    'https://utahack.github.io/images/icon/icon_menu_tokuten_on.png',
+    'https://utahack.github.io/images/icon/mypage_bar_button.png',
+    'https://utahack.github.io/images/icon/search_bar_button.png',
+    'https://utahack.github.io/js/mod.js',
     'https://utahack.github.io/js/aukaraokecp/common.js',
+    'https://utahack.github.io/js/aukaraokecp/jquery-3.4.1.min.js',
+    'https://utahack.github.io/js/aukaraokecp/jquery-ui.min.js',
+    'https://utahack.github.io/js/aukaraokecp/jquery.colorbox.js',
+    'https://utahack.github.io/js/aukaraokecp/jquery.cookie.js',
+    'https://utahack.github.io/js/aukaraokecp/jquery.easing.js',
     'https://utahack.github.io/js/aukaraokecp/jquery.layerBoard.js',
     'https://utahack.github.io/js/aukaraokecp/jquery.switchHat.js',
     'https://utahack.github.io/js/aukaraokecp/scroll.js',
-    'https://utahack.github.io/js/aukaraokecp/stamping.js',
-    'https://utahack.github.io/images/icon/app.svg',
-    'https://utahack.github.io/images/icon/back.svg',
-    'https://utahack.github.io/images/icon/menu.svg',
-    'https://utahack.github.io/images/icon/mypage.svg',
-    'https://utahack.github.io/images/icon/privilege.svg',
-    'https://utahack.github.io/images/icon/search.svg',
-    'https://utahack.github.io/images/icon/secure.svg',
-    'https://utahack.github.io/images/icon/top.svg',
-    'https://utahack.github.io/wrapper.css',
-    'https://utahack.github.io/wrapper/index.html',
-    'https://utahack.github.io/aukaraokecp2/index.html',
-    'https://utahack.github.io/aukaraokecp2/coupon/utahiro/index.html',
-    'https://utahack.github.io/wrapper2.css',
+    'https://utahack.github.io/js/aukaraokecp/stamping.js'
 ];
 
 // インストール処理
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
     event.waitUntil(
         caches
-            .open(CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(urlsToCache);
-            })
+        .open(CACHE_NAME)
+        .then(function (cache) {
+            return cache.addAll(urlsToCache);
+        })
     );
 });
 
 // リソースフェッチ時のキャッシュロード処理
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches
-            .match(event.request)
-            .then(function(response) {
-                return response ? response : fetch(event.request);
-            })
+        .match(event.request)
+        .then(function (response) {
+            return response ? response : fetch(event.request);
+        })
     );
 });

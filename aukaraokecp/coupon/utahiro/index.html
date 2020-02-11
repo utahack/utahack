@@ -2,29 +2,28 @@
 <html lang="ja">
 
 <head>
-	<meta charset="utf-8">
-	<meta name=”robots” content=”noindex”>
-	<meta name=”robots” content=”nofollow”>
-	<link rel="manifest" href="/manifest.json">
+	<meta charset="UTF-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
 	<title>auチューズデイ｜クーポン</title>
 	<meta name="description" content=" ">
 	<meta name="keywords" content=" ">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 
+	<link rel="shortcut icon" href="/images/aukaraokecp/favicon.ico?check000">
 	<link rel="apple-touch-icon-precomposed" href="#">
 	<link rel="stylesheet" href="/css/aukaraokecp/default.css">
 	<link rel="stylesheet" href="/css/aukaraokecp/colorbox.css">
-	<link rel="stylesheet" href="/css/aukaraokecp/sp.css">
+	<link rel="stylesheet" href="/css/aukaraokecp/sp.css?chk01">
 	<link rel="stylesheet" type="text/css" href="/css/aukaraokecp/print.css" media="print">
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/stroll.js/1.0/js/stroll.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="/js/aukaraokecp/stamping.js"></script>
-	<script src="/js/aukaraokecp/common.js"></script>
+	<script type="text/javascript" src="/js/aukaraokecp/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/js/aukaraokecp/jquery.easing.js"></script>
+	<script type="text/javascript" src="/js/aukaraokecp/scroll.js"></script>
+	<script type="text/javascript" src="/js/aukaraokecp/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="/js/aukaraokecp/common.js?chk01"></script>
+	<script type="text/javascript" src="/js/aukaraokecp/jquery-ui.min.js"></script>
 
 
 	<style>
@@ -89,31 +88,45 @@
 
 				<!-- 会員ステータス -->
 				<div class="status mar_t_10">
-					<p>あなたは<br>スマートパスプレミアム会員<br>です</p>
+					<form method="post" accept-charset="utf-8" id="checkin" action="/aukaraokecp/coupon/utahiro/checkin">
+						<div style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden"
+								name="_csrfToken" autocomplete="off"
+								value="b9f996667fd62246b0eebc2f397567f601af6c5a7a74871324147c7d70afb6a9c060a4585b9aa101d26927ca5e1baa2568f2a1c510dcc75d3559ab7281423963" />
+						</div> <input type="hidden" name="coupon_type" id="checkin_coupon_type" />
+						<p>あなたは<br>スマートパスプレミアム会員<br>です</p>
+
 				</div>
 				<!-- /会員ステータス -->
 
+				<!-- 誰でも！毎週10億円！もらえるキャンペーン（2020/02/10～2020/03/29）バナー -->
+				<div id="aupay_bnr">
+					<a href="#aupay" onClick="trEvent(this, 'カラオケチューズデイ', 'クリック', '誰でも！毎週10億円！もらえるキャンペーン_utahiro（CHECK）');"><img
+							src="/images/aukaraokecp/img_auPAY_0210_01.gif" width="100%" height="" alt="当店ではau PAYでのお支払いが可能です！"></a>
+				</div>
+				<!-- /誰でも！毎週10億円！もらえるキャンペーン（2020/02/10～2020/03/29）バナー -->
 				<h2 class="mar_b_0 coupon_status_bg"><img src="/images/autuesday/shop/utahiro/logo_01.png" width="300"
 						height="100" alt="歌広場"></h2>
 				<p class="coupon_status_bg_txt">今回のクーポンは</p>
 
 				<ul class="mar_t_0 mar_b_0">
-					<!-- 有効期限表示 -->
-					<li id="date_period" class="coupon_status_bg_list"></li>
+					<li class="coupon_status_bg_list">
+						2020年2月11日(火)オープンから<br>2020年2月12日(水)
+						AM7時まで
+					</li>
 				</ul>
 				<p class="mar_t_5">ご利用いただけます</p>
 			</section>
 
 			<section id="contents_coupon02">
 				<div class="coupon-wrap">
-					<div class="coupon" id="coupona_utahiro">
+					<div class="coupon" id="coupona_utahiro_20200211">
 						<img src="/images/aukaraokecp/coupon-top.png" alt="">
 						<div class="inner" class="pad_t_15 pad_b_15 pad_r_15 pad_l_15">
 							<img src="/images/aukaraokecp/coupon-title.png" alt="">
 							<ul>
 								<li>
-									<img src="/images/autuesday/shop/utahiro/coupon/a_utahiro_20190430_detail.png"
-										width="280" alt="歌広場 1200円割引" class="coupon_img_width">
+									<img src="/images/autuesday/shop/utahiro/coupon/a_utahiro_20200211_detail.png?check005" width="280"
+										alt="歌広場 600円割引" class="coupon_img_width">
 									<img src="/images/aukaraokecp/au_icon.png" class="coupon_au_icon_1">
 								</li>
 								<div class="coupon_inner2">
@@ -122,8 +135,7 @@
 										<p class="coupon_inner3_caution">ボタン「このクーポンを使う」を押さずに、スタッフにそのまま画面をお見せ下さい。</p>
 										<ul class="coupon_inner3_caution_list">
 											<li>・利用期間はボタンを押した後<span
-													class="coupon_inner3_caution_list_bold">30分間</span>です。30分以内に店頭で手続きを行わない場合、自動的に利用済になります。
-											</li>
+													class="coupon_inner3_caution_list_bold">30分間</span>です。30分以内に店頭で手続きを行わない場合、自動的に利用済になります。</li>
 											<li>・お一人様一日一回一度しか利用できません。</li>
 											<li>・他店舗では利用できません。該当店舗かどうかもう一度ご確認ください。</li>
 										</ul>
@@ -139,7 +151,7 @@
 					</div>
 					<div class="mog-sumi-wrap" style="left: 100%">
 						<div class="inner">
-							<div id="utahiro_coupon_01" class="mog-sumi" style="text-align:center;">
+							<div class="mog-sumi" style="text-align:center;">
 								<div class="shadow"></div>
 							</div>
 						</div>
@@ -174,14 +186,14 @@
 					<hr style="margin: 11px 0 0;">
 				</div>
 				<div class="coupon-wrap">
-					<div class="coupon" id="couponb_utahiro_20190430">
+					<div class="coupon" id="couponb_utahiro_20200211">
 						<img src="/images/aukaraokecp/coupon-top.png" alt="">
 						<div class="inner" class="pad_t_15 pad_b_15 pad_r_15 pad_l_15">
 							<img src="/images/aukaraokecp/coupon-title.png" alt="">
 							<ul>
 								<li>
-									<img src="/images/autuesday/shop/utahiro/coupon/b_utahiro_20190430_detail.png"
-										width="280" alt="歌広場 飲み放題割引" class="coupon_img_width">
+									<img src="/images/autuesday/shop/utahiro/coupon/b_utahiro_20200211_detail.png?check05" width="280"
+										alt="歌広場 600円割引" class="coupon_img_width">
 									<img src="/images/aukaraokecp/au_icon.png" class="coupon_au_icon_2">
 								</li>
 								<div class="coupon_inner2">
@@ -190,8 +202,7 @@
 										<p class="coupon_inner3_caution">ボタン「このクーポンを使う」を押さずに、スタッフにそのまま画面をお見せ下さい。</p>
 										<ul class="coupon_inner3_caution_list">
 											<li>・利用期間はボタンを押した後<span
-													class="coupon_inner3_caution_list_bold">30分間</span>です。30分以内に店頭で手続きを行わない場合、自動的に利用済になります。
-											</li>
+													class="coupon_inner3_caution_list_bold">30分間</span>です。30分以内に店頭で手続きを行わない場合、自動的に利用済になります。</li>
 											<li>・お一人様一日一回一度しか利用できません。</li>
 											<li>・他店舗では利用できません。該当店舗かどうかもう一度ご確認ください。</li>
 										</ul>
@@ -208,7 +219,10 @@
 
 					<div class="mog-sumi-wrap" style="left: 100%">
 						<div class="inner">
-							<div id="utahiro_coupon_02" class="mog-sumi" style="text-align:center;">
+							<div class="mog-sumi" style="text-align:center;">
+								<!--<img src="/images/aukaraokecp/coupon_sumi.png" alt="済_ご利用ありがとうございました。" width="240" class="mar_t_25">
+								<div class="coupon_sumi_date">
+								</div>-->
 								<div class="shadow"></div>
 							</div>
 						</div>
@@ -245,17 +259,34 @@
 		</div>
 
 
+		<!-- 誰でも！毎週10億円！もらえるキャンペーン（2020/02/10～2020/03/29）コーナー -->
+		<section id="aupay" class="pad_t_5">
+			<div id="aupay_block">
+				<img src="/images/aukaraokecp/img_auPAY_0210_02.png" width="" height=""
+					alt="当店も対象！au PAYでのお支払いで今なら最大20%ポイント還元!!">
+				<p>2/10よりau PAYご利用者様の全員が対象となる「誰でも!毎週10億円!もらえるキャンペーン」が実施予定となります。<br>
+					au PAYのご利用で、毎週先着で10億円に到達するまで20%ポイント還元される大変オトクなキャンペーンですので、是非この機会にご利用ください。</p>
+				<img src="/images/aukaraokecp/img_auPAY_2001_560x220.jpg" width="" height="" alt="誰でも！毎週10億円！もらえるキャンペーン：バナー">
+				<div class="btn_02 notprint mar_t_10" style="margin: 0 5px;"><a
+						href="https://www.au.com/pr/paycpn2020/?aa_oid=we-we-ow-0250" target="_blank"
+						onClick="trEvent(this, 'カラオケチューズデイ', '外部送客', '誰でも！毎週10億円！もらえるキャンペーン_utahiro（キャンペーンサイトへ）');"><img
+							src="/images/aukaraokecp/img_auPAY_2010_btn.png" width="254" height="55" alt="キャンペーン詳細はこちら"></a></div>
+				<p class="note pad_t_15 pad_b_0">※本キャンペーンは毎週（月曜日～日曜日）で10億円に達し次第終了となります。 詳しくはキャンペーン詳細ページよりご確認ください。</p>
+			</div>
+		</section>
+		<!-- /誰でも！毎週10億円！もらえるキャンペーン（2020/02/10～2020/03/29）コーナー -->
 		<div class="btn_01 mar_t_5">
 			<p class="mar_b_5">4000プレイリスト聴き放題で歌う曲見つかる！</p>
-			<a href="https://ac.ebis.ne.jp/" target="_blank"><img
-					src="/images/aukaraokecp/btn_11.png" width="304" height="55" alt="うたパス会員登録する"></a>
+			<a href="https://ac.ebis.ne.jp/tr_set.php?argument=WSwgvzTd&ai=k01_183971" target="_blank"
+				onClick="trEvent(this, 'カラオケチューズデイ', '外部送客', 'うたパス会員登録する');"><img src="/images/aukaraokecp/btn_11.png"
+					width="304" height="55" alt="うたパス会員登録する"></a>
 		</div>
-		<div class="btn_02 notprint mar_t_15"><a href="https://aukaraokecp/"><img
-					src="/images/aukaraokecp/btn_05.png" width="254" height="55" alt="トップへ戻る"></a></div>
+		<div class="btn_02 notprint mar_t_15"><a href="/aukaraokecp/"><img src="/images/aukaraokecp/btn_05.png" width="254"
+					height="55" alt="トップへ戻る"></a></div>
 
 		<!--ログアウトボタン-->
 		<section id="jcom-logout">
-			<a href="https://auth/logout/?ru=https%3A%2F%2Futapre.auone.jp%2Faukaraokecp%2F">ログアウト</a>
+			<a href="https://entm.auone.jp/auth/logout/?ru=https%3A%2F%2Fentm.auone.jp%2Faukaraokecp%2F">ログアウト</a>
 		</section>
 		<!--/ログアウトボタン-->
 
@@ -263,30 +294,8 @@
 			<address>&copy; KDDI</address>
 		</footer>
 	</article>
+
 	<script>
-		// ServiceWorker登録：https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('/service_worker.js').then(function (registration) {
-				console.log('ServiceWorker registration successful with scope: ', registration.scope);
-			}).catch(function (err) {
-				console.log('ServiceWorker registration failed: ', err);
-			});
-		}
-
-		// 有効期限表示
-		(() => {
-			let date_period = document.getElementById('date_period');
-			let dt = new Date();
-			let y_1 = dt.getFullYear();
-			let m_1 = dt.getMonth() + 1;
-			let d_1 = dt.getDate();
-			dt.setDate(dt.getDate() + 1);
-			let y_2 = dt.getFullYear();
-			let m_2 = dt.getMonth() + 1;
-			let d_2 = dt.getDate();
-			date_period.innerHTML = `${y_1}年${m_1}月${d_1}日(火)オープンから<br>${y_2}年${m_2}月${d_2}日(水) AM7時まで`;
-		})()
-
 		$(function () {
 			var $win = $(window),
 				$couponWrap = $('.coupon-wrap'),
@@ -321,7 +330,7 @@
 				loaded = function () {
 					$win.resize(resized);
 					resized();
-					var i = 0, j = 0, l = $couponWrap.size();
+					var i = 0, j = 0, l = $couponWrap.length;
 					for (i; i < l; i++) {
 						setMog(i, 0);
 						$mogWrap.eq(i).show();
@@ -336,33 +345,32 @@
 						$couponWrap.eq(num).addClass('active');
 						$couponWrap.eq(num).click(
 							function () {
-								if (!$couponWrap.eq(num).hasClass('stamped')) {
-									$("#popup_txt").dialog({
-										modal: true, //モーダル表示
-										resizable: true,
-										title: "最終確認", //タイトル
-										buttons: { //ボタン
-											"はい": function () {
-												$(this).dialog("close");
-												setMog(num, 120);
-												setTimeout(function () {
-													if (num == 0) {
-														stamping("utahiro_coupon_01");
-														$couponWrap.eq(num).addClass('stamped');
-													} else if (num == 1) {
-														stamping("utahiro_coupon_02");
-														$couponWrap.eq(num).addClass('stamped');
-													}
-												}, 700)
-											},
-											"いいえ": function () {
-												$(this).dialog("close");
-											}
+
+								$("#popup_txt").dialog({
+									modal: true, //モーダル表示
+									resizable: true,
+									title: "最終確認", //タイトル
+									buttons: { //ボタン
+										"はい": function () {
+											$(this).dialog("close");
+											setMog(num, 120);
+											setTimeout(function () {
+												if (num == 0) {
+													trEventBe('', 'カラオケチューズデイ', '遷移', 'もぎり利用_utahiro01', '');
+												} else if (num == 1) {
+													trEventBe('', 'カラオケチューズデイ', '遷移', 'もぎり利用_utahiro02', '');
+												}
+												$('#checkin_coupon_type').val(couponType[num]);
+												$('#checkin').submit();
+											}, 700)
+										},
+										"いいえ": function () {
+											$(this).dialog("close");
 										}
-									});
-									$('.ui-dialog-buttonset').addClass('clearfix'); //デザイン調整
-									$('.ui-dialog-buttonset').find('button:eq(1)').focus(); //いいえに選択状態
-								}
+									}
+								});
+								$('.ui-dialog-buttonset').addClass('clearfix'); //デザイン調整
+								$('.ui-dialog-buttonset').find('button:eq(1)').focus(); //いいえに選択状態
 							}
 						);
 					}
@@ -381,11 +389,28 @@
 					$mogSumi.css({ height: ch + 'px', width: cw + 'px' });
 				},
 				init = function () {
-					$win.load(loaded);
+					$win.on("load", loaded);
 				};
 			init();
 		})
 	</script>
+
+
+	<!-- GA キャンペーン情報 -->
+<script type="text/javascript">
+</script>
+<!-- /GA キャンペーン情報 -->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K25DZQH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K25DZQH');</script>
+<!-- End Google Tag Manager -->
+
+
 </body>
 
 </html>

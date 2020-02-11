@@ -1756,7 +1756,7 @@ auチューズデイ店舗検索機能　2017/05/12
   padding-top: 15px !important;
 }
 #contents_select_location .karaoke-list{
-  padding:24px 0px 0px 0px;
+  padding:18px 0px 0px 0px;
 }
 #contents_select_location .karaoke-list li:first-child{
 border-top: 1px solid #b3b3b3;
@@ -2811,4 +2811,50 @@ joysound_tamio_blk img{
 	right: 4%;
 }
 
+/* クーポンご利用方法-アコーディオン変更（2019/6/24） */
+#top section#contents_acc01 {
+    border: none;
+}
 
+#top section#contents_acc01 h1.howto {
+  background-color: #0000!important;
+  background: url(../../images/aukaraokecp/btn_coupon_open.png) no-repeat 100% 50%;
+  background-size: 100%;
+  padding: 0!important;
+}
+
+#top section#contents_acc01 h1.howto.nowOpen {
+  background-color: #0000!important;
+  background: url(../../images/aukaraokecp/btn_coupon_close.png) no-repeat 100% 50%;
+  background-size: 100%;
+  padding: 0!important;
+}
+
+div.switchDetail.howto {
+  border: 1px solid #000;
+  border-top: 0;
+  margin-top: -10px;
+  padding-top: 10px;
+}
+
+/* 誰でも！毎週10億円！もらえるキャンペーン（2020/02/10～2020/03/29）の店舗別判定追加 */
+/* バナー */
+#aupay_bnr { margin: 20px 20px 5px; }
+#aupay_bnr a { display: block; }
+/* コーナー */
+#aupay img { width: 100%; }
+#aupay p {
+	padding: 15px 0 ;
+	text-align: left;
+	line-height: 1.4;
+}
+#aupay p.note {
+	color: #ff0000;
+	font-size: 70%;
+}
+#aupay_block {
+	margin: 10px 20px 30px;
+	padding: 20px 15px;
+	border: solid 10px #CDA657;
+	background-color: #F9F2E2;
+}
