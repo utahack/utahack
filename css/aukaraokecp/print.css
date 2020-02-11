@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+.notprint{
+	display: none !important;
+}
+#contents01 section#contents_coupon01 h1 {
+	margin-bottom: 10px !important;
+}
+#contents01 section#contents_coupon01 ul span {
+    color: #000;
+}
+#contents01 section#contents_coupon01 ul{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #000000!important;
+}
+#contents01 section#contents_coupon01 p {
+	margin: 0 0 0 0;
+}
+#contents01 section#contents_coupon01 p + ul{
+	display: inline !important;
+}
+#contents01 section#contents_coupon03{
+	margin-top: 5px;
+}
+#contents01 section#contents_coupon03 h1 {
+    padding: 5px 0;
+}
+#contents_coupon03 ul li > img{
+	width: 90px !important;
+	height: 90px !important;
+}
+.vp_renewal #cpn_popcorn h1 {
+    margin-bottom: -30px;
+    padding-top: 0;
+}
+.vp_renewal #cpn_popcorn p{
+	text-align: center;
+}
+.vp_renewal #cpn_popcorn p img {
+    width: 50%;
+}
+#contents01 section#contents_coupon03 ul {
+    margin: 0px 0 5px 0;
+}
+.vp_renewal #cpn_popcorn h1 img {
+    width: 80%;
+		margin-top: 5px;
+}
+.vp_renewal #cpn_popcorn .p_01 {
+	font-size: 12px;
+}
+.vp_renewal #cpn_popcorn .p_02 {
+	font-size: 12px !important;
+}
+.vp_renewal #cpn_popcorn .p_03{
+	font-size: 12px;
+}
+.vp_renewal #cpn_popcorn .p_03 em {
+	font-size: 13px !important;
+}
+#contents01 section#contents_coupon03 p {
+	padding: 5px 0 5px 0;
+	font-size: 13px;
+}
+.super_monday_blk{
+	margin-top: 0;
+}
+
