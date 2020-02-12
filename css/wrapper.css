@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   position: relative;
   height: 100%;
@@ -14,71 +19,55 @@ body {
   overflow: hidden;
 }
 
-body>* {
-  width: 100%;
-}
-
-#container {
-  height: 100%;
-  padding: 1em;
-}
-
 .spframe {
   width: 100%;
   height: calc(100% - 6rem);
   border: 0;
 }
 
-.headerMenu {
+.header-bar {
   display: table;
-  z-index: 10;
-  top: 0px;
   width: 100%;
-  max-width: 600px;
   height: 3rem;
   background-color: #3D466D;
+  color: white;
   table-layout: fixed;
   box-sizing: border-box;
-  padding: 0 0.5rem;
 }
 
-.headerMenu li {
+.header-item {
   display: table-cell;
-  color: white;
-  vertical-align: middle;
   width: 3rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.headerMenu img {
+.header-item>img {
   height: 2.7rem;
   width: auto;
-  text-align: center;
   vertical-align: bottom;
 }
 
-.headerMenu .back {
+.header-item.back {
   text-align: left;
-  width: 25%;
   width: 6rem;
 }
 
-
-.headerMenu .title {
+.header-item.title {
   text-align: center;
-  color: white;
   font-weight: bold;
-  font-size: 15px;
-  width: calc(100% - 9rem);
+  width: auto;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 0.1em;
 }
 
 
 
 .footerMenu {
   display: table;
-  z-index: 10;
   position: fixed;
   bottom: 0px;
   width: 100%;
