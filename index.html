@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#3D466D">
-  <link rel="shortcut icon" href="/images/aukaraokecp/favicon.ico?check000">
+  <link rel="shortcut icon" href="/images/aukaraokecp/favicon.ico">
   <link href="/images/aukaraokecp/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
   <link href="/images/aukaraokecp/apple-touch-icon.png" rel="apple-touch-icon" />
   <link href="/images/aukaraokecp/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
@@ -30,29 +30,30 @@
   </ul>
 
 
-  <iframe id="spframe" class="spframe" src="/aukaraokecp"
+  <iframe id="spFrame" class="sp-frame" src="/aukaraokecp"
     sandbox="allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation"></iframe>
 
   <!-- footer menu -->
-  <ul class="footerMenu">
-    <span class="menu"><img src="/images/icon/button_sidemenu.png" /></span>
-    <li class="footerbutton"><img src="/images/icon/icon_menu_home_on.png">
+  <ul class="footer-bar">
+    <li id="topButton" class="footer-item"><img src="/images/icon/icon_menu_home_on.png">
       <p class="forcus">トップ</p>
     </li>
-    <li class="footerbutton"><img src="/images/icon/icon_menu_tokuten.png">
+    <li class="footer-item"><img src="/images/icon/icon_menu_tokuten.png">
       <p>エンタメ/特典</p>
     </li>
-    <li class="footerbutton"><img src="/images/icon/icon_menu_app.png">
+    <li class="footer-item"><img src="/images/icon/icon_menu_app.png">
       <p>アプリ</p>
     </li>
-    <li class="footerbutton"><img src="/images/icon/icon_menu_anshin.png">
+    <li class="footer-item"><img src="/images/icon/icon_menu_anshin.png">
       <p>あんしん</p>
     </li>
   </ul>
+  
+  <span class="side-button"><img src="/images/icon/button_sidemenu.png" /></span>
 
   <script>
 
-    spframe.addEventListener('load',(element) => {
+    spFrame.addEventListener('load',(element) => {
       const ifrDoc = element.target.contentDocument;
       titleHeader.textContent = ifrDoc.title;
       const script = document.createElement('script');
@@ -61,8 +62,12 @@
     }, false);
 
     backButton.addEventListener('click', ()=>{
-      spframe.contentWindow.history.back();
+      spFrame.contentWindow.history.back();
     }, false);
+
+    topButton.addEventListener('click', ()=>{
+      spFrame.src = "/aukaraokecp";
+    }, false)
     
   </script>
 
