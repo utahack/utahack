@@ -30,7 +30,7 @@
 
 
   <iframe id="spframe" class="spframe" src="/aukaraokecp"
-    sandbox="allow-same-origin allow-forms allow-scripts allow-popups"></iframe>
+    sandbox="allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation"></iframe>
 
   <!-- footer menu -->
   <ul class="footerMenu">
@@ -51,19 +51,17 @@
 
   <script>
 
-    document.addEventListener('DOMContentLoaded', () => {
-      spframe.addEventListener('load',(element) => {
-        const ifrDoc = element.target.contentDocument;
-        titleHeader.textContent = ifrDoc.title;
-        const script = document.createElement('script');
-        script.src = '/js/mod.js';
-        ifrDoc.body.appendChild(script);
-      }, false)
+    spframe.addEventListener('load',(element) => {
+      const ifrDoc = element.target.contentDocument;
+      titleHeader.textContent = ifrDoc.title;
+      const script = document.createElement('script');
+      script.src = '/js/mod.js';
+      ifrDoc.body.appendChild(script);
     }, false);
 
     backButton.addEventListener('click', ()=>{
       spframe.contentWindow.history.back();
-    }, false)
+    }, false);
     
   </script>
 
