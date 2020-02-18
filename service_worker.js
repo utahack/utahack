@@ -8,6 +8,8 @@ const urlsToCache = [
     "manifest.json",
     "service_worker.js",
     "aukaraokecp/index.html",
+    "aukaraokecp/coupon/borabora/index.html",
+    "aukaraokecp/coupon/pasela/index.html",
     "aukaraokecp/coupon/utahiro/index.html",
     "css/loading.css",
     "css/wrapper.css",
