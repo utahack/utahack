@@ -14,7 +14,7 @@
 }
 
 .load-block.loading>.load-indicator {
-  height: 0.5rem;
+  height: 0.25rem;
   width: 99%;
   background-color: #FD7400;
   animation: indicate 0.3s cubic-bezier(0.3, 1, 0.8, 0.1), 0.1s;
