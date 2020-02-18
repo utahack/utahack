@@ -6,7 +6,6 @@ const urlsToCache = [
     "404.html",
     "index.html",
     "manifest.json",
-    "service_worker.js",
     "aukaraokecp/index.html",
     "aukaraokecp/coupon/borabora/index.html",
     "aukaraokecp/coupon/pasela/index.html",

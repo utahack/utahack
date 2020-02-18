@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 suffixs = {'.js', '.png', '.html', '.jpg', '.ico', '.json', '.css', '.gif'}
-ignores = {'test', '.git', '.vscode'}
+ignores = {'test', '.git', '.vscode', 'service_worker.js'}
 
 def allow(p):
     for ignore in ignores:
