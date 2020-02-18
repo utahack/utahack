@@ -55,7 +55,7 @@ if ('/aukaraokecp/coupon/' === location.pathname.slice(0, 20)) {
 	$('#checkin').attr('action', 'javascript:void(0)').on('submit', async ()=>{
 		const i = +$('#checkin_coupon_type').val() - 1;
 		timeStamp[i] = new Date();
-		await sleep(500);
+		await sleep(750);
 		location.replace(location.href);
 	});
 
