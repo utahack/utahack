@@ -31,27 +31,38 @@ const stamping = (num, date) => {
 	setMog(num, 120);
 }
 
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+const waitUntil = (conditionFn, ms=100) => new Promise(resolve => {
+	const id = setInterval(() => {
+		if (conditionFn()) {
+			clearInterval(id);
+			resolve();
+		}
+	}, ms);
+});
+
+(async () => {
 if ('/aukaraokecp/coupon/' === location.pathname.slice(0, 20)) {
-	const timeStamp = window.parent.timeStamp;
 	const dt1 = new Date();
 	const dt2 = new Date(+dt1+86400000);
 	const sdt1 = dtToStr2(dt1);
 	const sdt2 = dtToStr2(dt2);
 	$('.coupon_status_bg_list').html(`${sdt1}オープンから<br>${sdt2} AM7時まで`);
-	$('#checkin').attr('action', 'javascript:void(0)').on('submit', ()=>{
+
+	const timeStamp = window.parent.timeStamp;
+
+	$('#checkin').attr('action', 'javascript:void(0)').on('submit', async ()=>{
 		const i = +$('#checkin_coupon_type').val() - 1;
 		timeStamp[i] = new Date();
+		await sleep(500);
 		location.replace(location.href);
 	});
-	const id = setInterval(()=>{
-		if ($('.active').length === $('.coupon-wrap').length) {
-			clearInterval(id);
-			timeStamp.forEach((date, i) => {
-				if (date > 0) stamping(i, date);
-			});
-		}
-	}, 100);
+
+	await waitUntil(()=>$('.active').length === $('.coupon-wrap').length);
+
+	timeStamp.forEach((date, i) => (date > 0) && stamping(i, date));
 }
 window.parent.stopLoading(500);
+})()
 
