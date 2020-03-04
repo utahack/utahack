@@ -31,10 +31,10 @@ backButton.addEventListener('click', () => {
   mainFrame.contentWindow.history.back();
 }, false);
 
-topButton.addEventListener('click', () => {
+topButton.addEventListener('dblclick', () => {
   mainFrame.src = "/aukaraokecp";
 }, false);
 
-resetButton.addEventListener('click', () => {
+resetButton.addEventListener('dblclick', () => {
   if (confirm('')) location.reload();
 }, false);
