@@ -32,7 +32,7 @@ def main():
         html = p.read_text(encoding='utf-8')
         cacheURLs = cacheURLs or set(linkiter(html))
 
-    template = template.replace('$cacheURLs', json.dumps(list(cacheURLs), indent=4))
+    template = template.replace('$cacheURLs', json.dumps(sorted(cacheURLs), indent=4))
     Path('service_worker.js').write_text(template, encoding='utf-8')
 
 

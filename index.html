@@ -26,17 +26,16 @@
 
   <header class="header-block">
     <ul class="header-bar">
-      <li id="backButton" class="header-item"><img src="/images/icon/back_bar_button.png" /></li>
-      <li class="header-item"></li>
+      <li id="backButton" class="header-item"><img src="/images/smartpass/title_back.png" /></li>
+      <li class="header-item menu"><img src="/images/smartpass/menu_bar_button.png" /></li>
       <li id="titleHeader" class="header-item title"></li>
-      <li class="header-item search"><img src="/images/icon/search_bar_button.png" /></li>
-      <li class="header-item mypage"><img src="/images/icon/mypage_bar_button.png" /></li>
+      <li class="header-item"><img src="/images/smartpass/icon_search_suggest.png" /></li>
+      <li class="header-item"><img src="/images/smartpass/mypage_bar_button.png" /></li>
     </ul>
   </header>
 
-  <main class="main-block">
+  <main id="mainBlock" class="main-block">
     <div id="loadBlock" class="load-block">
-      <div class="load-indicator"></div>
     </div>
     <iframe id="mainFrame" class="main-frame" src="/aukaraokecp"
       sandbox="allow-same-origin allow-forms allow-scripts allow-popups allow-top-navigation allow-modals allow-presentation"></iframe>
@@ -45,39 +44,31 @@
   <footer class="footer-block">
     <ul class="footer-bar">
       <li id="topButton" class="footer-item">
-        <img class="on" src="/images/icon/icon_menu_home_on.png">
-        <img class="off" src="/images/icon/icon_menu_home.png">
-        <p>トップ</p>
-      </li>
-      <li class="footer-item selected">
-        <img class="on" src="/images/icon/icon_menu_tokuten_on.png">
-        <img class="off" src="/images/icon/icon_menu_tokuten.png">
-        <p>エンタメ/特典</p>
+        <img class="on" src="/images/smartpass/icon_menu_home_on.png">
+        <img class="off" src="/images/smartpass/icon_menu_home.png">
+        <p>ホーム</p>
       </li>
       <li class="footer-item">
-        <img class="on" src="/images/icon/icon_menu_app_on.png">
-        <img class="off" src="/images/icon/icon_menu_app.png">
-        <p>アプリ</p>
+        <img class="on" src="/images/smartpass/icon_menu_by_purpose_on.png">
+        <img class="off" src="/images/smartpass/icon_menu_by_purpose.png">
+        <p>目的で探す</p>
       </li>
       <li id="resetButton" class="footer-item">
-        <img class="on" src="/images/icon/icon_menu_anshin_on.png">
-        <img class="off" src="/images/icon/icon_menu_anshin.png">
-        <p>あんしん</p>
+        <img class="on" src="/images/smartpass/icon_menu_my_coupon_on.png">
+        <img class="off" src="/images/smartpass/icon_menu_my_coupon.png">
+        <p>マイクーポン</p>
       </li>
     </ul>
   </footer>
 
-  <nav class="side-block">
-    <span class="side-button"><img src="/images/icon/button_sidemenu.png" /></span>
-  </nav>
-  <script src="js/wrapper.js"> </script>
+  <script src="js/wrapper.js"></script>
 
   <script>
     // ServiceWorker登録：https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja
-    if ('serviceWorker' in navigator && location.hash==="#install") {
-      navigator.serviceWorker.register('/service_worker.js').then((registration) => {
+    if ('serviceWorker' in navigator && location.hash === "#install") {
+      navigator.serviceWorker.register('/service_worker.js').then(registration => {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }).catch(function (err) {
+      }).catch(err => {
         console.log('ServiceWorker registration failed: ', err);
       });
     }
