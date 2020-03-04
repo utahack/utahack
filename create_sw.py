@@ -13,8 +13,9 @@ ignores = {'test', '.git', '.vscode', 'service_worker.js'}
 def linkiter(html):
     for m in re.finditer(r'(href|src)="(.*?)"', html):
         url = urlparse(urljoin('https://entm.auone.jp', m.group(2)))
-        ext = os.path.splitext(url.geturl())[1]
-        yield url.geturl()
+        if url.netloc != 'entm.auone.jp':
+            continue
+        yield re.sub(rf'.*{url.netloc}/', '', url.geturl())
 
 
 def allow(p):
@@ -24,15 +25,14 @@ def allow(p):
     return p.suffix in suffixs
 
 def main():
-    template = Path('service_worker.tpl').read_text(encoding='utf-8')
+    template = Path('service_worker.tpl.js').read_text(encoding='utf-8')
     cacheURLs = {str(p).replace('\\', '/') for p in Path('.').glob('**/*.*') if allow(p)}
-    cacheURLs.add('//www.googletagmanager.com/gtm.js?id=GTM-K25DZQH')
     path = Path('.')
     for p in path.glob('**/*.html'):
         html = p.read_text(encoding='utf-8')
         cacheURLs = cacheURLs or set(linkiter(html))
 
-    template = template.replace('$cacheURLs', json.dumps(list(cacheURLs), indent=4))
+    template = template.replace('$cacheURLs', json.dumps(sorted(cacheURLs), indent=4))
     Path('service_worker.js').write_text(template, encoding='utf-8')
 
 

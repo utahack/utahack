@@ -1,25 +1,37 @@
 .load-block {
+  position: relative;
   display: none;
 }
 
-.load-block.loading {
+.loading .load-block {
   display: block;
   width: 100%;
   background-color: #FEFEFE;
 }
 
-.load-block.loading+* {
+.loading::before {
+  display: none;
+}
+
+.loading .load-block+* {
   visibility: hidden;
 }
 
-.load-block.loading>.load-indicator {
-  height: 0.25rem;
-  width: 99%;
+.load-block::before, .load-block::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #AAAAAA;
+}
+
+.loading .load-block::after {
   background-color: #FD7400;
-  animation: indicate 0.3s cubic-bezier(0.3, 1, 0.8, 0.1), 0.1s;
+  animation: indicate 0.3s cubic-bezier(0.3, 1, 0.8, 0.1) 0.1s forwards;
 }
 
 @keyframes indicate {
-  0% {width: 0;}
+  0% {width: 0%;}
   100% {width: 99%;}
 }
