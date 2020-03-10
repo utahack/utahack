@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+.mog-wrap{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	/*height: 150%;*/
+	height: 92%;
+	display: none;
+	-webkit-transform-origin:100% 0px;
+	   -moz-transform-origin:100% 0px;
+	    -ms-transform-origin:100% 0px;
+	     -o-transform-origin:100% 0px;
+	        transform-origin:100% 0px;
+}
+.mog-wrap .inner{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.mog{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 130%;
+	height: 100%;
+	background: #ca5d01;
+	box-shadow:-20px 0px 10px rgba(0,0,0,0.5);
+}
+.mog-sumi .shadow{
+	background:#000;
+	opacity: .1;
+	width: 100%;
+	height:100%;
+}
+
+.mog-sumi-wrap{
+	position:absolute;
+	top:0;
+	left:100%;
+	width:130%;
+	height:100%;
+
+}
+.mog-sumi-wrap .inner{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	opacity: 1;
+}
+.mog-sumi-wrap .txt{
+	position: absolute;
+	top:92%;
+	left:50%;
+	/*color:#ec5900;*/
+	text-align: center;
+	/*font-weight: bold;*/
+	font-size:14px;
+	width:98%;
+	letter-spacing: 0.05em;
+	font-feature-settings: "palt";
+	text-shadow:0 0 20px #fff,0 0 20px #fff,0 0 10px #fff,0 0 10px #fff,0 0 10px #fff;
+	opacity: 1;
+}
+.mog-sumi-wrap .txt span{
+	display: block;
+	font-size:12px;
+}
+.mog-sumi{
+	position: absolute;
+	width:100%;
+	height:100%;
+	left:-100%;
+	top:0;
+	background:rgba(255,255,255,0.85);
+}
+.coupon-wrap.active .mog-wrap,
+.coupon-wrap.active .mog,
+.coupon-wrap.active .mog-sumi-wrap,
+.coupon-wrap.active .mog-sumi{
+}
+.mog-wrap,
+.mog,
+.mog-sumi-wrap,
+.mog-sumi{
+}
+
+.coupon-wrap.active .mog{
+	background:#da6400;
+}
+.coupon-wrap.active .mog-sumi .shadow{
+	background:#000;
+	opacity: 0;
+}

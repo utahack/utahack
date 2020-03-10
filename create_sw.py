@@ -12,10 +12,10 @@ ignores = {'test', '.git', '.vscode', 'service_worker.js'}
 
 def linkiter(html):
     for m in re.finditer(r'(href|src)="(.*?)"', html):
-        url = urlparse(urljoin('https://entm.auone.jp', m.group(2)))
-        if url.netloc != 'entm.auone.jp':
-            continue
-        yield re.sub(rf'.*{url.netloc}/', '', url.geturl())
+        url = urlparse(urljoin(f'https://entm.auone.jp/', m.group(2)))
+        ext = os.path.splitext(url.path)[1]
+        if url.hostname == 'entm.auone.jp' and ext in suffixs:
+            yield re.sub(r'.*entm.auone.jp/', '', url.geturl())
 
 
 def allow(p):
@@ -30,7 +30,7 @@ def main():
     path = Path('.')
     for p in path.glob('**/*.html'):
         html = p.read_text(encoding='utf-8')
-        cacheURLs = cacheURLs or set(linkiter(html))
+        cacheURLs |= set(linkiter(html))
 
     template = template.replace('$cacheURLs', json.dumps(sorted(cacheURLs), indent=4))
     Path('service_worker.js').write_text(template, encoding='utf-8')

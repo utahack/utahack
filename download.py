@@ -10,18 +10,21 @@ import requests
 exts = {'.js', '.css', '.png', '.jpg', '.gif', '.ico', '.svg'}
 
 
-def linkiter(html):
+def linkiter(path):
+    html = path.read_text(encoding='utf-8')
     for m in re.finditer(r'(href|src)="(.*?)"', html):
-        url = urlparse(urljoin('https://entm.auone.jp', m.group(2)))
-        ext = os.path.splitext(url.geturl())[1]
+        url = urlparse(urljoin(f'https://entm.auone.jp/', m.group(2)))
+        ext = os.path.splitext(url.path)[1]
         if url.hostname == 'entm.auone.jp' and ext in exts:
             yield url
+        #yield re.sub(rf'.*{url.netloc}/', '', url.geturl())
 
 
-def download(html):
-    for url in linkiter(html):
-        p = Path(url.path)
-        if p.exists:
+def download(path):
+    print(path)
+    for url in linkiter(path):
+        p = Path('.' + url.path)
+        if p.exists():
             print('exists: ', url.path)
             continue
         r = requests.get(url.geturl())
@@ -36,8 +39,7 @@ def download(html):
 def main():
     path = Path('.')
     for p in path.glob('**/*.html'):
-        html = p.read_text(encoding='utf-8')
-        download(html)
+        download(p)
 
 
 if __name__ == '__main__':
